@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Santy Is Home</title>
+  <style>
+    body { margin: 0; padding: 0; background: #000; overflow: hidden; }
+    canvas { display: block; width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
+  <canvas id="unity-canvas"></canvas>
+  
+  <script src="WebGL.loader.js"></script>
+  <script>
+    createUnityInstance(document.getElementById("unity-canvas"), {
+      dataUrl: "WebGL.data.gz",
+      frameworkUrl: "WebGL.framework.js.gz",
+      codeUrl: "WebGL.wasm.gz",
+      companyName: "",
+      productName: "Santy Is Home",
+      productVersion: "1.0"
+    }).catch(function(err) {
+      console.error("Unity error:", err);
+    });
+  </script>
+</body>
+</html>
